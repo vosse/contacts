@@ -35,6 +35,10 @@ a:hover {
   color: white;
 }
 
+.min-width {
+  min-width: 350px;
+}
+
 /* purpleish color theme for TEXT */
 .cornflowerblue {
   color: cornflowerblue;
@@ -55,6 +59,11 @@ a:hover {
 
 .bold-text {
   font-weight: 600;
+}
+
+.contacts-table {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .auth-card {

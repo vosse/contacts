@@ -6,28 +6,16 @@ import axios from 'axios'
 import Navbar from './components/layout/Navbar'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
-import Contacts from './components/contacts/Contacts'
+import Dashboard from './components/contacts/Dashboard'
 
 
 function App() {
 
-  const [isAuth, setIsAuth] = useState(false)
 
-  const setAuth = (boolean) => {
-    setIsAuth(boolean)
-  }
 
   const checkAuth = async () => {
     try {
-
-      // const config = {
-      //   headers: {
-      //     jwt_token: localStorage.token
-      //   }
-      // }
-
-    //  const res = await axios.get('http://localhost:5000/auth/verify', config)
-      const res = await fetch('http://localhost:5000/auth/verify', {
+      const res = await fetch('http://161.35.201.113:5000/auth/verify', {
         method: 'POST',
         headers: {
           jwt_token: localStorage.token
@@ -41,9 +29,17 @@ function App() {
     }
   }
 
+
+
   useEffect( () => {
     checkAuth()
   }, [])
+
+  const [isAuth, setIsAuth] = useState(false)
+
+  const setAuth = (boolean) => {
+    setIsAuth(boolean)
+  }
 
   return (
     <div className="App">
@@ -51,9 +47,10 @@ function App() {
         <Fragment>
         <Navbar />
         <Switch>
-          <Route exact path='/login' render={ (p) => !isAuth ? <Login {...p} setAuth={setAuth} /> : <Redirect to='/contacts' /> }></Route>
-          <Route exact path='/signup' render={ (p) => !isAuth ? <Register {...p} setAuth={setAuth} /> : <Redirect to='/contacts' /> }></Route>
-          <Route exact path='/contacts' render={ (p) => !isAuth ? <Redirect to='/login'/> : <Contacts />} />
+          <Route exact path='/contacts' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard {...props}/>) } />
+          <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : <Redirect to='/contacts' /> }></Route>
+          <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : <Redirect to='/contacts' /> }></Route>
+
         </Switch>
         </Fragment>
       </BrowserRouter>

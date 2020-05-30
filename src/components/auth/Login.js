@@ -33,7 +33,7 @@ const Login = ({ setAuth }) => {
 
       //const response = await axios.post("http://localhost:5000/auth/login", body, config)
         const response = await fetch(
-          'http://localhost:5000/auth/login',
+          'http://161.35.201.113:5000/auth/login',
           {
             method: "POST",
             headers: {
@@ -42,7 +42,7 @@ const Login = ({ setAuth }) => {
             body: body
           }
         )
-        
+
       const parseRes = await response.json()
 
       if (parseRes.jwtToken) {
@@ -58,7 +58,7 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <div className='auth-card mt-5'>
+      <div className='auth-card mt-5 min-width'>
         <div className='mb-5 bold-text'>Sign in to your account</div>
           <form onSubmit={onSubmit}>
             <div class="form-group mb-4">
