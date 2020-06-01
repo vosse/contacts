@@ -24,6 +24,22 @@ code {
 }
 
 
+/* Media queries */
+
+@media screen and (max-width: 600px) {
+  .email {
+    display: none;
+  }
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: crimson!important;
+}
+
+.outline-del {
+  outline: none!important;
+}
+
 a:hover {
   color: black;
   text-decoration: none;
@@ -35,6 +51,10 @@ a:hover {
   color: white;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .min-width {
   min-width: 350px;
 }
@@ -42,6 +62,14 @@ a:hover {
 /* purpleish color theme for TEXT */
 .cornflowerblue {
   color: cornflowerblue;
+}
+
+.cfb-bg {
+  background-color: cornflowerblue;
+}
+
+.text-white {
+  color: white;
 }
 
 .font-s {
@@ -64,6 +92,17 @@ a:hover {
 .contacts-table {
   width: 80%;
   margin: 0 auto;
+}
+
+.th-style {
+  min-width: 10%;
+  text-align: center;
+}
+
+.shadows {
+  -moz-box-shadow: 0 0 4px #ccc;
+  -webkit-box-shadow: 0 0 4px #ccc;
+  box-shadow: 0 0 4px #ccc;
 }
 
 .auth-card {

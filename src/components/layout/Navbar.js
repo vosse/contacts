@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -6,7 +6,7 @@ const Navbar = ({ isAuth, setAuth }) => {
 
   const logout = (e) => {
     setAuth(false)
-    console.log('test')
+    localStorage.removeItem('token')
   }
 
 
@@ -19,18 +19,18 @@ const Navbar = ({ isAuth, setAuth }) => {
 
   const authLinks = (
     <div className='navbar-nav'>
-      <a className='nav-item nav-link'>New contact</a>
-      <Link onClick={e => logout(e)} className="nav-item nav-link">Logout</Link>
+      <Link className='nav-item nav-link' to='/new' >New contact</Link>
+      <a onClick={e => logout(e)} className="cursor nav-item nav-link">Logout</a>
     </div>
   )
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/contacts">
+      <a className="navbar-brand" href="/">
         <div id='pic'  className="d-inline-block align-top ml-3" ></div>
         <div className='ml-3 d-inline-block'>Contacts</div>
       </a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="outline-del navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
         <div className="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">

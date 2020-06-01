@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 const Login = ({ setAuth }) => {
@@ -22,11 +21,6 @@ const Login = ({ setAuth }) => {
 
     const body = JSON.stringify({ email, pass })
       // const body = { email, pass }
-    const config = {
-       headers: {
-         'Content-Type': 'application/json'
-       }
-     }
 
 
     try {
@@ -61,10 +55,10 @@ const Login = ({ setAuth }) => {
       <div className='auth-card mt-5 min-width'>
         <div className='mb-5 bold-text'>Sign in to your account</div>
           <form onSubmit={onSubmit}>
-            <div class="form-group mb-4">
-              <label for="exampleInputEmail1">Email address</label>
+            <div className="form-group mb-4">
+              <label htmlFor="exampleInputEmail1">Email address</label>
               <input
-                class="form-control"
+                className="form-control"
                 aria-describedby="emailHelp"
                 type="text"
                 name="email"
@@ -72,17 +66,17 @@ const Login = ({ setAuth }) => {
                 onChange={(e) => onChange(e)}
                 />
             </div>
-            <div class="form-group mb-4">
-              <label for="exampleInputPassword1">Password</label>
+            <div className="form-group mb-4">
+              <label htmlFor="exampleInputPassword1">Password</label>
               <input
                 name="pass"
-                class="form-control"
+                className="form-control"
                 type="password"
                 value={pass}
                 onChange={(e) => onChange(e)}
                 />
             </div>
-            <button type="submit" class="bold-text mt-2 mb-2 center crimson btn">Continue</button>
+            <button type="submit" className="outline-del bold-text mt-2 mb-2 center crimson btn">Continue</button>
           </form>
         </div>
       <div className='font-s mt-3 center text-center'>Don't have an account? <Link className='bold-text cornflowerblue' to='/signup'>Sign Up</Link></div>

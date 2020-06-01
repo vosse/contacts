@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Register = ({ setAuth }) => {
@@ -50,10 +50,10 @@ const Register = ({ setAuth }) => {
         <div className='mb-5 bold-text'>Create your Contacts account</div>
           <form onSubmit={onSubmit}>
             <div class="form-group mb-4">
-              <label for="exampleInputEmail1">Email address</label>
+              <label htmlFor="exampleInputEmail1">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 name="email"
@@ -62,22 +62,22 @@ const Register = ({ setAuth }) => {
                 onChange={(e) => onChange(e)}
                 />
             </div>
-            <div class="form-group mb-4">
-              <label for="username">Username</label>
+            <div className="form-group mb-4">
+              <label htmlFor="username">Username</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 name="name"
                 placeholder="username"
                 value={name}
                 onChange={(e) => onChange(e)}
                 />
             </div>
-            <div class="form-group mb-4">
-              <label for="exampleInputPassword1">Password</label>
+            <div className="form-group mb-4">
+              <label htmlFor="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
                 name="pass"
                 placeholder="********"
@@ -85,7 +85,7 @@ const Register = ({ setAuth }) => {
                 onChange={(e) => onChange(e)}
                 />
             </div>
-            <button type="submit" class="bold-text mt-2 mb-2 center crimson btn">Continue</button>
+            <button type="submit" className="outline-del bold-text mt-2 mb-2 center crimson btn">Continue</button>
           </form>
         </div>
       <div className='font-s mt-3 center text-center'>Have an account? <Link className='bold-text cornflowerblue' to='/login'>Sign In</Link></div>

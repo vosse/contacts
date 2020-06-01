@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import  { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import axios from 'axios'
 
 // components
 import Navbar from './components/layout/Navbar'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Dashboard from './components/contacts/Dashboard'
+import NewContact from './components/contacts/NewContact'
 
 
 function App() {
@@ -47,10 +47,10 @@ function App() {
         <Fragment>
         <Navbar isAuth={isAuth} setAuth={setAuth}/>
         <Switch>
-          <Route exact path='/contacts' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard {...props}/>) } />
-          <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : <Redirect to='/contacts' /> }></Route>
-          <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : <Redirect to='/contacts' /> }></Route>
-
+          <Route exact path='/new' render={ (props) => !isAuth ? <Redirect to='/login' /> : (<NewContact />) } />
+          <Route exact path='/' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard {...props}/>) } />
+          <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
+          <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
         </Switch>
         </Fragment>
       </BrowserRouter>

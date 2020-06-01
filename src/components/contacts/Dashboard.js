@@ -1,7 +1,6 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // components
-import InputContact from './InputContact'
 import ListContacts from './ListContacts'
 
 const Dashboard = ({ setAuth }) => {
@@ -22,7 +21,7 @@ const Dashboard = ({ setAuth }) => {
       )
 
       const parseData = await res.json()
-      console.log(parseData)
+      //console.log(parseData)
       setAllContacts(parseData)
     } catch (err) {
       console.error(err.message)
