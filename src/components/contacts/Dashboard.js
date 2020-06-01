@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 // components
 import ListContacts from './ListContacts'
 
-const Dashboard = ({ setAuth }) => {
+const Dashboard = ({ setAuth, isAuth }) => {
 
   const [allContacts, setAllContacts] = useState([])
   const [contactsChange, setContactsChange] = useState(false)

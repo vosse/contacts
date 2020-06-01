@@ -1,6 +1,5 @@
 {
   "name": "contacts",
-  "homepage": "https://vosse.github.io/contacts/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

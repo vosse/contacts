@@ -48,7 +48,7 @@ function App() {
         <Navbar isAuth={isAuth} setAuth={setAuth}/>
         <Switch>
           <Route exact path='/new' render={ (props) => !isAuth ? <Redirect to='/login' /> : (<NewContact />) } />
-          <Route exact path='/' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard {...props}/>) } />
+          <Route exact path='/' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard isAuth={isAuth} {...props}/>) } />
           <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
           <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
         </Switch>
