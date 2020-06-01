@@ -56,11 +56,11 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
     return (
       <Fragment>
         <div className="jumbotron mt-5 shadows">
-          <h1 className="display-4">Hello!</h1>
+          <h1 className="display-4">Hello! </h1>
           <p className="lead">This is a simple React application I made for storing all your contacts.</p>
           <p>It uses Express & PostgreSQL for storing and retrieving data.</p>
-          <p>API is publicly available on my <a href='http://www.github.com/vosse'>github</a></p>
-          <p>You can reach me at <a href='mailto:relja.jovicevic@gmail.com'>relja.jovicevic@gmail.com</a></p>
+          <p>API is publicly available on my <a className='cornflowerblue' href='http://www.github.com/vosse'>github</a></p>
+          <p>You can reach me at <a className='cornflowerblue' href='mailto:relja.jovicevic@gmail.com'>relja.jovicevic@gmail.com</a></p>
           <a className="btn cfb-bg text-white btn-lg" href="#" role="button">Learn more</a>
         </div>
       </Fragment>
