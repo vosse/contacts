@@ -15,7 +15,7 @@ function App() {
 
   const checkAuth = async () => {
     try {
-      const res = await fetch('http://161.35.201.113:5000/auth/verify', {
+      const res = await fetch('https://vosse.pw/auth/verify', {
         method: 'POST',
         headers: {
           jwt_token: localStorage.token
