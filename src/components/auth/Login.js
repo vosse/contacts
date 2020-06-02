@@ -60,7 +60,7 @@ const Login = ({ setAuth }) => {
               <input
                 className="form-control"
                 aria-describedby="emailHelp"
-                type="text"
+                type="email"
                 name="email"
                 value={email}
                 onChange={(e) => onChange(e)}

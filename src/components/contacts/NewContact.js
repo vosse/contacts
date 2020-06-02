@@ -90,7 +90,7 @@ const NewContact = ({ setContactChange }) => {
             <input
               className="form-control"
               aria-describedby="emailHelp"
-              type="text"
+              type="email"
               value={email}
               name="email"
               onChange={e => onChange(e)}
@@ -112,7 +112,20 @@ const NewContact = ({ setContactChange }) => {
               />
           </div>
           </div>
-          <div className="form-group form-check mt-2">
+
+          <button type="submit" className="outline-del bold-text mt-2 mb-2 center crimson btn">Continue</button>
+        </form>
+      </div>
+    </Fragment>
+  )
+}
+
+export default NewContact
+
+
+
+
+/*        <div className="form-group form-check mt-2">
             <input
               type="checkbox"
               className="custom-checkbox form-check-input"
@@ -123,11 +136,6 @@ const NewContact = ({ setContactChange }) => {
               />
             <label className="form-check-label" htmlFor="exampleCheck1">&#127775;</label>
           </div>
-          <button type="submit" className="outline-del bold-text mt-2 mb-2 center crimson btn">Continue</button>
-        </form>
-      </div>
-    </Fragment>
-  )
-}
 
-export default NewContact
+
+*/
