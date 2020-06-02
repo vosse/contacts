@@ -11,7 +11,7 @@ const Dashboard = ({ setAuth, isAuth }) => {
   const getContacts = async() => {
     try {
       const res = await fetch(
-        'https://vosse.pwcontacts/',
+        'https://vosse.pw/contacts/',
         {
           method: 'GET',
           headers: {
