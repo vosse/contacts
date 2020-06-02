@@ -61,7 +61,7 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
           <p>It uses Express & PostgreSQL for storing and retrieving data.</p>
           <p>API is publicly available on my <a className='cornflowerblue' href='http://www.github.com/vosse'>github</a></p>
           <p>You can reach me at <a className='cornflowerblue' href='mailto:relja.jovicevic@gmail.com'>relja.jovicevic@gmail.com</a></p>
-          <a className="btn cfb-bg text-white btn-lg" href="#" role="button">Learn more</a>
+          <a className="btn cfb-bg text-white btn-lg" href="#" role="button">Create contact</a>
         </div>
       </Fragment>
     )}
