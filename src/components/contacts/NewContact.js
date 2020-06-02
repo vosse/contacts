@@ -39,7 +39,7 @@ const NewContact = ({ setContactChange }) => {
       }
 
       const res = await fetch(
-        'http://161.35.201.113:5000/contacts/new',
+        'https://vosse.pw/contacts/new',
         {
           method: 'POST',
           headers: myHeaders,

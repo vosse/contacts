@@ -27,7 +27,7 @@ const Login = ({ setAuth }) => {
 
       //const response = await axios.post("http://localhost:5000/auth/login", body, config)
         const response = await fetch(
-          'http://161.35.201.113:5000/auth/login',
+          'https://vosse.pw/auth/login',
           {
             method: "POST",
             headers: {

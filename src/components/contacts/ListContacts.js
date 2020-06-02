@@ -8,7 +8,7 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
   const deleteContact = async(id) => {
     try {
       const deleteContact = await fetch(
-        `http://161.35.201.113:5000/contacts/delete/${id}`,
+        `https://vosse.pw/contacts/delete/${id}`,
         {
           method: 'DELETE',
           headers: {
