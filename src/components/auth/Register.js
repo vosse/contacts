@@ -22,7 +22,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = {email, name, pass}
 
-      const response = await fetch('https://vosse.pw/auth/signup',
+      const response = await fetch('http://localhost:5000/auth/signup',
     {
       method: 'POST',
       headers: {

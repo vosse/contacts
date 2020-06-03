@@ -11,14 +11,13 @@ import NewContact from './components/contacts/NewContact'
 
 function App() {
 
-
-
   const checkAuth = async () => {
     try {
-      const res = await fetch('https://vosse.pw/auth/verify', {
+      const res = await fetch('http://localhost:5000/auth/verify', {
         method: 'POST',
         headers: {
-          jwt_token: localStorage.token
+          jwt_token: localStorage.token,
+
         }
       })
       const parseRes = await res.json()
@@ -28,7 +27,6 @@ function App() {
       console.error(err.message)
     }
   }
-
 
 
   useEffect( () => {
@@ -47,10 +45,10 @@ function App() {
         <Fragment>
         <Navbar isAuth={isAuth} setAuth={setAuth}/>
         <Switch>
-          <Route exact path='/new' render={ (props) => !isAuth ? <Redirect to='/login' /> : (<NewContact />) } />
-          <Route exact path='/' render={ (props) => !isAuth ? <Redirect to='/login'/> : (<Dashboard isAuth={isAuth} {...props}/>) } />
-          <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
-          <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : <Redirect to='/' /> }></Route>
+          <Route exact path='/new' render={ (props) => !isAuth ? (<Redirect to='/login' />) : (<NewContact />) } />
+          <Route exact path='/' render={ (props) => !isAuth ? (<Redirect to='/signup'/>) : (<Dashboard isAuth={isAuth} {...props}/>) } />
+          <Route exact path='/login' render={ (props) => !isAuth ? (<Login {...props} setAuth={setAuth} />) : (<Redirect to='/' />) }></Route>
+          <Route exact path='/signup' render={ (props) => !isAuth ? (<Register {...props} setAuth={setAuth} />) : (<Redirect to='/' />) }></Route>
         </Switch>
         </Fragment>
       </BrowserRouter>

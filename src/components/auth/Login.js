@@ -19,21 +19,21 @@ const Login = ({ setAuth }) => {
 
     e.preventDefault()
 
-    const body = JSON.stringify({ email, pass })
-      // const body = { email, pass }
+    //const body = JSON.stringify({ email, pass })
+       const body = { email, pass }
 
 
     try {
 
       //const response = await axios.post("http://localhost:5000/auth/login", body, config)
         const response = await fetch(
-          'https://vosse.pw/auth/login',
+          'http://localhost:5000/auth/login',
           {
             method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              'Content-type': 'application/json'
             },
-            body: body
+            body: JSON.stringify(body)
           }
         )
 
@@ -60,7 +60,7 @@ const Login = ({ setAuth }) => {
               <input
                 className="form-control"
                 aria-describedby="emailHelp"
-                type="email"
+                type="text"
                 name="email"
                 value={email}
                 onChange={(e) => onChange(e)}

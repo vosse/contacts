@@ -20,7 +20,7 @@ const Navbar = ({ isAuth, setAuth }) => {
   const authLinks = (
     <div className='navbar-nav'>
       <Link className='nav-item nav-link' to='/new' >New contact</Link>
-      <a onClick={e => logout(e)} className="cursor nav-item nav-link">Logout</a>
+      <Link onClick={e => logout(e)} className="cursor nav-item nav-link">Logout</Link>
     </div>
   )
 

@@ -39,7 +39,7 @@ const NewContact = ({ setContactChange }) => {
       }
 
       const res = await fetch(
-        'https://vosse.pw/contacts/new',
+        'http://localhost:5000/contacts/new',
         {
           method: 'POST',
           headers: myHeaders,
@@ -50,7 +50,7 @@ const NewContact = ({ setContactChange }) => {
       const parseRes = await res.json()
       console.log(parseRes)
       console.log(res)
-      setInputs('')
+      setInputs([])
       window.location = '/'
 
     } catch (err) {
@@ -121,21 +121,3 @@ const NewContact = ({ setContactChange }) => {
 }
 
 export default NewContact
-
-
-
-
-/*        <div className="form-group form-check mt-2">
-            <input
-              type="checkbox"
-              className="custom-checkbox form-check-input"
-              id="exampleCheck1"
-              name="favorite"
-              value={favorite}
-              onChange={e => onChange(e)}
-              />
-            <label className="form-check-label" htmlFor="exampleCheck1">&#127775;</label>
-          </div>
-
-
-*/

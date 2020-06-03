@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const ListContacts = ({ setContactsChange, allContacts }) => {
@@ -8,7 +9,7 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
   const deleteContact = async(id) => {
     try {
       const deleteContact = await fetch(
-        `https://vosse.pw/contacts/delete/${id}`,
+        `http://localhost:5000/contacts/delete/${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -61,7 +62,7 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
           <p>It uses Express & PostgreSQL for storing and retrieving data.</p>
           <p>API is publicly available on my <a className='cornflowerblue' href='http://www.github.com/vosse'>github</a></p>
           <p>You can reach me at <a className='cornflowerblue' href='mailto:relja.jovicevic@gmail.com'>relja.jovicevic@gmail.com</a></p>
-          <a className="btn cfb-bg text-white btn-lg" href="/new" role="button">Create contact</a>
+          <Link className="btn cfb-bg text-white btn-lg" to="/new" role="button">Create contact</Link>
         </div>
       </Fragment>
     )}
