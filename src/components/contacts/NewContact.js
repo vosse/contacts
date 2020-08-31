@@ -48,7 +48,7 @@ const NewContact = ({ setContactChange }) => {
       console.log(parseRes)
       console.log(res)
       setInputs([])
-      window.location = '/'
+      window.location = '/contacts'
 
     } catch (err) {
       console.error(err.message)
