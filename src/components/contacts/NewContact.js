@@ -6,16 +6,14 @@ const NewContact = ({ setContactChange }) => {
     first_name: '',
     last_name: '',
     email: '',
-    number: '',
-    favorite: Boolean
+    number: ''
   })
 
   const {
     first_name,
     last_name,
     email,
-    number,
-    favorite
+    number
   } = inputs
 
   const onChange = (e) => {
@@ -34,12 +32,11 @@ const NewContact = ({ setContactChange }) => {
         first_name,
         last_name,
         email,
-        number,
-        favorite
+        number
       }
 
       const res = await fetch(
-        'http://localhost:5000/contacts/new',
+        'https://vosse-contactsapi.glitch.me/contacts/new',
         {
           method: 'POST',
           headers: myHeaders,

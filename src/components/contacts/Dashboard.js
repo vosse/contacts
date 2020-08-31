@@ -11,7 +11,7 @@ const Dashboard = ({ setAuth, isAuth }) => {
   const getContacts = async() => {
     try {
       const res = await fetch(
-        'http://localhost:5000/contacts/',
+        'https://vosse-contactsapi.glitch.me/contacts/',
         {
           method: 'GET',
           headers: {

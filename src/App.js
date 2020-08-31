@@ -13,7 +13,7 @@ function App() {
 
   const checkAuth = async () => {
     try {
-      const res = await fetch('http://localhost:5000/auth/verify', {
+      const res = await fetch('https://vosse-contactsapi.glitch.me/auth/verify', {
         method: 'POST',
         headers: {
           jwt_token: localStorage.token,

@@ -27,7 +27,7 @@ const Login = ({ setAuth }) => {
 
       //const response = await axios.post("http://localhost:5000/auth/login", body, config)
         const response = await fetch(
-          'http://localhost:5000/auth/login',
+          'https://vosse-contactsapi.glitch.me/auth/login',
           {
             method: "POST",
             headers: {

@@ -13,7 +13,7 @@ const Navbar = ({ isAuth, setAuth }) => {
   const guestLinks = (
     <div className="navbar-nav">
       <a className="nav-item nav-link" href="/login">Sign In</a>
-      <a className="nav-item nav-link">Sign Up</a>
+      <a className="nav-item nav-link" href="/signup">Sign Up</a>
     </div>
   )
 

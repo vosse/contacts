@@ -9,7 +9,7 @@ const ListContacts = ({ setContactsChange, allContacts }) => {
   const deleteContact = async(id) => {
     try {
       const deleteContact = await fetch(
-        `http://localhost:5000/contacts/delete/${id}`,
+        `https://vosse-contactsapi.glitch.me/contacts/delete/${id}`,
         {
           method: 'DELETE',
           headers: {

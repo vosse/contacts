@@ -13,7 +13,7 @@ const Register = ({ setAuth }) => {
   const { email, name, pass } = input
 
   const onChange = (e) => {
-    setInput({ ... input, [e.target.name]: e.target.value })
+    setInput({ ...input, [e.target.name]: e.target.value })
   }
 
   const onSubmit = async (e) => {
@@ -22,7 +22,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = {email, name, pass}
 
-      const response = await fetch('http://localhost:5000/auth/signup',
+      const response = await fetch('https://vosse-contactsapi.glitch.me/auth/signup',
     {
       method: 'POST',
       headers: {
@@ -46,7 +46,7 @@ const Register = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <div className='auth-card mt-5'>
+      <div className='auth-card mt-5 min-width'>
         <div className='mb-5 bold-text'>Create your Contacts account</div>
           <form onSubmit={onSubmit}>
             <div class="form-group mb-4">
